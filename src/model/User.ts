@@ -1,0 +1,80 @@
+export class User{
+    constructor(
+    private nickname: string,
+    private id: string,
+    private name: string,
+    private email: string,
+    private password: string,
+
+    ){}
+
+    getNickname(){
+        return this.nickname;
+    }
+
+    getId(){
+        return this.id;
+    }
+
+    getName(){
+        return this.name
+    }
+
+    getEmail(){
+        return this.email;
+    }
+
+    getPassword(){
+        return this.password;
+    }
+
+    setId(id: string){
+        this.id = id;
+    }
+
+    setName(name: string){
+        this.name = name;
+    }
+
+    setEmail(email: string){
+        this.email = email;
+    }
+
+    setPassword(password: string){
+        this.password = password;
+    }
+
+   
+
+   
+
+    static toUserModel(user: any): User {
+        return new User(user.id, user.name, user.nickname, user.email, user.password);
+      }
+
+
+}
+
+export interface UserInputDTO{
+    email: string;
+    password: string;
+    name: string;
+    nickname:string;
+}
+
+export interface LoginInputDTO{
+    email: string;
+    password: string;
+}
+
+export interface ImagesInputDTO{
+    Date: any;
+
+    id: string;
+    subtitle: string;
+    author: string;
+    nickname: string;
+   
+    file: string;
+    collection: string;
+}
