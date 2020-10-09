@@ -3,15 +3,15 @@ import { User } from "../model/User";
 
 export class UserDatabase extends BaseDatabase {
 
-  private static TABLE_NAME: string= "USUARIOS_XABIAX";
+  private static TABLE_NAME = "USUARIOS_XABIAX";
 
   public async createUser(
     id: string,
     email: string,
     name: string,
-    nickname:string,
+    nickname: string,
     password: string,
- 
+   
   ): Promise<void> {
     try {
       await this.getConnection()
@@ -21,7 +21,7 @@ export class UserDatabase extends BaseDatabase {
           name,
           nickname,
           password,
-          
+         
         })
         .into(UserDatabase.TABLE_NAME);
     } catch (error) {
