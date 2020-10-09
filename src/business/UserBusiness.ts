@@ -6,7 +6,7 @@ import { Authenticator } from "../services/Authenticator";
 import { ImagesDatabase } from "../data/ImagesDatabase";
 
 export class UserBusiness {
-    createImages(input: ImagesInputDTO) {
+  createImages(input: ImagesInputDTO) {
         throw new Error("Method not implemented.");
     }
 
@@ -30,7 +30,7 @@ export class UserBusiness {
         const accessToken = authenticator.generateToken({ id });
 
         return accessToken;
-    }
+    } 
     
     async createUser(user: UserInputDTO) {
 
@@ -53,6 +53,7 @@ export class UserBusiness {
 
         const userDatabase = new UserDatabase();
         const userFromDB = await userDatabase.getUserByEmail(user.email);
+        console.log(userFromDB)
 
         const hashManager = new HashManager();
         const hashCompare = await hashManager.compare(user.password, userFromDB.getPassword());

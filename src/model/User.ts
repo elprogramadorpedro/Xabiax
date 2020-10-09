@@ -1,12 +1,17 @@
 export class User{
+    
     constructor(
-    private nickname: string,
+
     private id: string,
     private name: string,
+    private nickname: string,
     private email: string,
     private password: string,
 
+
     ){}
+  
+   
 
     getNickname(){
         return this.nickname;
@@ -44,12 +49,12 @@ export class User{
         this.password = password;
     }
 
-   
+ 
 
    
 
     static toUserModel(user: any): User {
-        return new User(user.id, user.name, user.nickname, user.email, user.password);
+        return new User(user.id, user.name, user.nickname, user.email, user.password );
       }
 
 
@@ -63,18 +68,17 @@ export interface UserInputDTO{
 }
 
 export interface LoginInputDTO{
-    email: string;
-    password: string;
+    email: string,
+    password: string
 }
 
 export interface ImagesInputDTO{
-    Date: any;
-
+    
     id: string;
     subtitle: string;
     author: string;
     nickname: string;
-   
+    date: number;
     file: string;
     collection: string;
 }

@@ -3,14 +3,13 @@ import { User } from "../model/User";
 
 export class ImagesDatabase extends BaseDatabase {
 
-  private static TABLE_NAME: string = "IMAGES_XABIAX";
+  private static TABLE_NAME: string = "IMAGES_XABIA";
 
   public async createImages(
     id: string,
     subtitle: string,
     author: string,
-    nickname:string,
-  
+    date:string,
     file: string,
     collection: string,
     
@@ -21,9 +20,8 @@ export class ImagesDatabase extends BaseDatabase {
         .insert({
             id,
             subtitle,
-            author,
-            nickname,
-            Date,
+            user_id:author,
+            creation_date:date,
             file,
             collection,
             
