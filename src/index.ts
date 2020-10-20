@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use("/user", userRouter);
 app.use("/image", ImagesRouter);
-app.use("/imagereading", ImageReadingRouter);
+
 
 const server = app.listen(process.env.PORT, () => {
     if (server) {
